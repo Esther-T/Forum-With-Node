@@ -1,0 +1,38 @@
+const express = require("express");
+const bodyParser = require("body-parser");
+const request = require("request");
+const https = require("https");
+var unirest = require("unirest");
+
+const app = express();
+app.set("view engine", "ejs");
+
+app.use(bodyParser.urlencoded({extended : true}));
+app.use(express.static("public")); // this is to use the static local files that we have like css
+const port  = 6001;
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/login.html"); //send html file
+})
+
+app.get("/log-in", function (req, res){
+  const username = req.body.username;
+  const password = req.body.password;
+  console.log(username);
+  console.log(password);
+});
+app.get("/sign-up", function (req, res){
+  const firstname = req.body.firstname;
+  const lastname = req.body.lastname;
+  const username = req.body.username;
+  const password = req.body.password;
+  const confirmPassword = req.body.confirmpassword;
+  console.log(firstname);
+  console.log(lastname);
+  console.log(username);
+  console.log(password);
+  console.log(confirmPassword);
+});
+app.listen(port, () => {
+  console.log(`App listening at http://localhost:${port}`)
+  });
