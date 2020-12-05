@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const request = require("request");
 const https = require("https");
 var unirest = require("unirest");
+const mongoose = require("mongoose")
 
 const app = express();
 app.set("view engine", "ejs");
@@ -10,6 +11,9 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(express.static("public")); // this is to use the static local files that we have like css
 const port  = 6001;
+
+mongoose.connect("mongodb://localhost:27017/forumDB",{useNewUrlParser: true});
+
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/login.html"); //send html file
