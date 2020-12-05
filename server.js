@@ -13,6 +13,10 @@ app.use(express.static("public")); // this is to use the static local files that
 const port  = 6001;
 
 mongoose.connect("mongodb://localhost:27017/forumDB",{useNewUrlParser: true});
+//schema
+const itemsSchema = {
+  name: String
+};
 
 
 app.get("/", (req, res) => {
