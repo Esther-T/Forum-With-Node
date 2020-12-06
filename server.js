@@ -9,7 +9,7 @@ const app = express();
 app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({extended : true}));
-app.use(express.static("public")); // this is to use the static local files that we have like css
+app.use(express.static("public")); 
 const port  = 6001;
 
 mongoose.connect("mongodb://localhost:27017/forumDB", { useUnifiedTopology: true });
