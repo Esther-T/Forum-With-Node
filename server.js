@@ -9,21 +9,20 @@ const app = express();
 app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({extended : true}));
-app.use(express.static("public")); 
+app.use(express.static("public"));
 const port  = 6001;
 
 mongoose.connect("mongodb://localhost:27017/forumDB", { useUnifiedTopology: true });
 //schema
 const passwordSchema = new mongoose.Schema({
   username: String,
-  password: String
+  pass: String
 });
-
 
 const Password = mongoose.model("Password", passwordSchema);
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/login.html"); //send html file
+  res.sendFile(__dirname + "/login.html"); 
 })
 
 app.post("/log-in", function (req, res){
