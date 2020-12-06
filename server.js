@@ -19,6 +19,7 @@ const passwordSchema = new mongoose.Schema({
   password: String
 });
 
+
 const Password = mongoose.model("Password", passwordSchema);
 
 app.get("/", (req, res) => {
@@ -30,22 +31,6 @@ app.post("/log-in", function (req, res){
   const password = req.body.password;
   console.log(username);
   console.log(password);
-
-  Password.findOne({username: "admin"}, function(err, foundUsername){
-      if(!err)
-      {
-        if(!foundUsername)
-        {
-          console.log("Not found")
-        }
-        console.log("what")
-      }
-      else
-      {
-          console.log("what")
-      }
-
-  });
 
 });
 app.post("/sign-up", function (req, res){
