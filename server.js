@@ -12,24 +12,43 @@ app.use(bodyParser.urlencoded({extended : true}));
 app.use(express.static("public")); // this is to use the static local files that we have like css
 const port  = 6001;
 
-mongoose.connect("mongodb://localhost:27017/forumDB",{useNewUrlParser: true});
+mongoose.connect("mongodb://localhost:27017/forumDB", { useUnifiedTopology: true });
 //schema
-const itemsSchema = {
-  name: String
-};
+const passwordSchema = new mongoose.Schema({
+  username: String,
+  password: String
+});
 
+const Password = mongoose.model("Password", passwordSchema);
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/login.html"); //send html file
 })
 
-app.get("/log-in", function (req, res){
+app.post("/log-in", function (req, res){
   const username = req.body.username;
   const password = req.body.password;
   console.log(username);
   console.log(password);
+
+  Password.findOne({username: "admin"}, function(err, foundUsername){
+      if(!err)
+      {
+        if(!foundUsername)
+        {
+          console.log("Not found")
+        }
+        console.log("what")
+      }
+      else
+      {
+          console.log("what")
+      }
+
+  });
+
 });
-app.get("/sign-up", function (req, res){
+app.post("/sign-up", function (req, res){
   const firstname = req.body.firstname;
   const lastname = req.body.lastname;
   const username = req.body.username;
