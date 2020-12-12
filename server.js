@@ -64,10 +64,10 @@ app.post("/log-in", function (req, res){
 });
 
 app.post("/sign-up", function (req, res){
-  const firstname = req.body.firstname;
-  const lastname = req.body.lastname;
-  const username = req.body.username;
-  const password = req.body.password;
+  const firstname_login = req.body.firstname;
+  const lastname_login = req.body.lastname;
+  const username_login = req.body.username;
+  const password_login = req.body.password;
   const confirmPassword = req.body.confirmpassword;
   console.log(firstname_login);
   console.log(lastname_login);
