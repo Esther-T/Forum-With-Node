@@ -32,6 +32,7 @@ app.post("/log-in", function (req, res){
   console.log(password);
 
 });
+
 app.post("/sign-up", function (req, res){
   const firstname = req.body.firstname;
   const lastname = req.body.lastname;
@@ -44,6 +45,7 @@ app.post("/sign-up", function (req, res){
   console.log(password);
   console.log(confirmPassword);
 });
+
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`)
   });
