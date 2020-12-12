@@ -32,35 +32,31 @@ app.post("/log-in", function (req, res){
   console.log(username_login);
   console.log(password_login);
   Password.find(function(err, usernames){
-  if(err)
-  {
-    console.log(err);
-  }
-  else
-  {
-    usernames.forEach(function(username_db){
-        console.log(username_db.username);
-		if(username_login == username_db.username)
-		{
-			if(password_login == username_db.password)
+	  if(err)
+	  {
+		console.log(err);
+	  }
+	  else
+	  {
+		usernames.forEach(function(username_db){
+			console.log(username_db.username);
+			if(username_login == username_db.username)
 			{
-				console.log("Access approved");
-				isfound = true;
+				if(password_login == username_db.password)
+				{
+					console.log("Access approved");
+					isfound = true;
+				}
 			}
-			else
-			{
-				console.log("Access denied");
-			}
-		}
-    });
-  }
-  
-});
+		});
+	  }
+	  
+	});
 
-if(!isFound)
-{
-	console.log("Access denied!");
-}
+	if(!isfound)
+	{
+		console.log("Access denied!");
+	}
 });
 
 app.post("/sign-up", function (req, res){
