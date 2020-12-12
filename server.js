@@ -15,10 +15,10 @@ const port  = 6001;
 mongoose.connect("mongodb://localhost:27017/forumDB", { useUnifiedTopology: true });
 //schema
 const passwordSchema = new mongoose.Schema({
-  firstname = String,
-  lastname = String,
+  firstName = String,
+  lastName = String,
   username: String,
-  pass: String
+  password: String
 });
 
 const Password = mongoose.model("Password", passwordSchema);
