@@ -16,7 +16,9 @@ mongoose.connect("mongodb://localhost:27017/forumDB", { useUnifiedTopology: true
 //schema
 const passwordSchema = new mongoose.Schema({
   username: String,
-  pass: String
+  pass: String,
+  firstname = String,
+  lastname = String
 });
 
 const Password = mongoose.model("Password", passwordSchema);
@@ -72,6 +74,7 @@ app.post("/sign-up", function (req, res){
   console.log(username);
   console.log(password);
   console.log(confirmPassword);
+  
 });
 
 app.listen(port, () => {
