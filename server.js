@@ -26,11 +26,41 @@ app.get("/", (req, res) => {
 })
 
 app.post("/log-in", function (req, res){
-  const username = req.body.username;
-  const password = req.body.password;
-  console.log(username);
-  console.log(password);
+  const username_login = req.body.username;
+  const password_login = req.body.password;
+  var isfound = false;
+  console.log(username_login);
+  console.log(password_login);
+  Password.find(function(err, usernames){
+  if(err)
+  {
+    console.log(err);
+  }
+  else
+  {
+    usernames.forEach(function(username_db){
+        console.log(username_db.username);
+		if(username_login == username_db.username)
+		{
+			if(password_login == username_db.password)
+			{
+				console.log("Access approved");
+				isfound = true;
+			}
+			else
+			{
+				console.log("Access denied");
+			}
+		}
+    });
+  }
+  
+});
 
+if(!isFound)
+{
+	console.log("Access denied!");
+}
 });
 
 app.post("/sign-up", function (req, res){
