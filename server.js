@@ -69,11 +69,18 @@ app.post("/sign-up", function (req, res){
   const username = req.body.username;
   const password = req.body.password;
   const confirmPassword = req.body.confirmpassword;
-  console.log(firstname);
-  console.log(lastname);
-  console.log(username);
-  console.log(password);
+  console.log(firstname_login);
+  console.log(lastname_login);
+  console.log(username_login);
+  console.log(password_login);
   console.log(confirmPassword);
+  const entry = new Password({
+  firstName: firstname_login,
+  lastName: lastname_login,
+  username: username_login,
+  password: password_login
+});
+entry.save(); 
   
 });
 
