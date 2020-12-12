@@ -28,7 +28,7 @@ app.get("/", (req, res) => {
 app.post("/log-in", function (req, res){
   const username_login = req.body.username;
   const password_login = req.body.password;
-  var isfound = false;
+  const isfound = false;
   console.log(username_login);
   console.log(password_login);
   Password.find(function(err, usernames){
@@ -51,12 +51,14 @@ app.post("/log-in", function (req, res){
 		});
 	  }
 	  
+	  if(!isfound)
+	  {
+		console.log("Access denied!");
+	  }
+	  
 	});
 
-	if(!isfound)
-	{
-		console.log("Access denied!");
-	}
+	
 });
 
 app.post("/sign-up", function (req, res){
