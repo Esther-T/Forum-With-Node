@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended : true}));
 app.use(express.static("public"));
 const port  = 6001;
 
-mongoose.connect("mongodb://localhost:27017/forumDB", { useUnifiedTopology: true });
+mongoose.connect("mongodb://localhost:27017/forumDB", {useNewUrlParser: true, useUnifiedTopology: true});
 //schema
 const passwordSchema = new mongoose.Schema({
   firstName: String,
@@ -73,12 +73,13 @@ app.post("/sign-up", function (req, res){
   console.log(lastname_login);
   console.log(username_login);
   console.log(password_login);
-  console.log(confirmPassword);
+  //console.log(confirmPassword);
+  
   const entry = new Password({
 	  firstName: firstname_login,
 	  lastName: lastname_login,
 	  username: username_login,
-	  password: password_login
+	  password: confirmPassword
 	});
 	entry.save(); 
 });
