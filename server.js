@@ -75,13 +75,12 @@ app.post("/sign-up", function (req, res){
   console.log(password_login);
   console.log(confirmPassword);
   const entry = new Password({
-  firstName: firstname_login,
-  lastName: lastname_login,
-  username: username_login,
-  password: password_login
-});
-entry.save(); 
-  
+	  firstName: firstname_login,
+	  lastName: lastname_login,
+	  username: username_login,
+	  password: password_login
+	});
+	entry.save(); 
 });
 
 app.listen(port, () => {
