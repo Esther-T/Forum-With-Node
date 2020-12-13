@@ -36,6 +36,7 @@ app.post("/log-in", function (req, res){
   Password.find(function(err, usernames){
 	  if(err)
 	  {
+		console.log("You have an error here")
 		console.log(err);
 	  }
 	  else
