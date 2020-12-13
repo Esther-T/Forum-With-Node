@@ -77,11 +77,21 @@ app.post("/sign-up", function (req, res){
   
   const entry = new Password({
 	  firstName: firstname_login,
-	  lastName: lastname_login,
+	  lastName: lastname_login, 
 	  username: username_login,
 	  password: confirmPassword
 	});
-	entry.save(); 
+
+  Password.insertMany(entry, function(err){
+          if(err)
+          {
+            console.log(err);
+          }
+          else
+          {
+            console.log("suceessfully added item to DB");
+          }
+        });
 });
 
 app.listen(port, () => {
