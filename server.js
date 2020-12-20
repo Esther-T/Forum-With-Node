@@ -29,7 +29,8 @@ app.get("/", (req, res) => {
 
 app.get("/comment", function(req, res)
 {
-	const username = "hi";
+	const username = req.body.username_login;
+	console.log(username);
     res.render('comment_page', {username: username});
 });
 
@@ -55,7 +56,7 @@ app.post("/log-in", function (req, res){
 				{
 					console.log("Access approved");
 					isfound = true;
-					res.redirect("/comment?" + username_login);
+					res.redirect("/comment?username_login=" + username_login);
 				}
 			}
 		});
