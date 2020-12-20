@@ -55,7 +55,7 @@ app.post("/log-in", function (req, res){
 				{
 					console.log("Access approved");
 					isfound = true;
-					res.render("/comment?" + username_login);
+					res.redirect("/comment?" + username_login);
 				}
 			}
 		});
