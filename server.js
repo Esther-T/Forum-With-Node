@@ -64,7 +64,7 @@ app.post("/log-in", function (req, res){
 	  
 	  if(!isfound)
 	  {
-		console.log("Access denied!");
+		console.log("Access denied");
 	  }
 	  
 	});
