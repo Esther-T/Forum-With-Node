@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 
 app.get("/comment", function(req, res)
 {
-	const username = req.body.username_login;
+	const username = req.query.username_login;
 	console.log(username);
     res.render('comment_page', {username: username});
 });
