@@ -27,6 +27,12 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/login.html"); 
 })
 
+app.get("/comment", function(req, res)
+{
+	const username = "hi";
+  res.render('comment_page', {username: username});
+});
+
 app.post("/log-in", function (req, res){
   var username_login = req.body.username;
   var password_login = req.body.password;
