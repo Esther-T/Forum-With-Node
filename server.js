@@ -28,9 +28,9 @@ app.get("/", (req, res) => {
 })
 
 app.post("/log-in", function (req, res){
-  const username_login = req.body.username;
-  const password_login = req.body.password;
-  const isfound = false;
+  var username_login = req.body.username;
+  var password_login = req.body.password;
+  var isfound = false;
   console.log(username_login);
   console.log(password_login);
   Password.find(function(err, usernames){
