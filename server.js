@@ -21,7 +21,15 @@ const passwordSchema = new mongoose.Schema({
   password: String
 });
 
+const commentSchema = new mongoose.Schema({
+  username: String,
+  message: String,
+  date: String
+});
+
 const Password = mongoose.model("Password", passwordSchema);
+const Comment = mongoose.model("Comment", commentSchema);
+
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/login.html"); 
