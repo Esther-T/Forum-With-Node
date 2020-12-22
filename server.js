@@ -111,6 +111,10 @@ app.post("/sign-up", function (req, res){
         });
 });
 
+app.post("/post-comment", function(req, res){
+	
+});
+
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`)
   });
