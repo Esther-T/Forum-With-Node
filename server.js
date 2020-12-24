@@ -112,7 +112,22 @@ app.post("/sign-up", function (req, res){
 });
 
 app.post("/post-comment", function(req, res){
-	
+	const entry = new Comment({
+	  username: req.body.username,
+	  message: req.body.comment,
+	  date: req.body.date
+	});
+
+  Comment.insertMany(entry, function(err){
+          if(err)
+          {
+            console.log(err);
+          }
+          else
+          {
+            console.log("suceessfully added item to dB");
+          }
+        });
 });
 
 app.listen(port, () => {
