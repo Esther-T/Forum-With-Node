@@ -112,20 +112,20 @@ app.post("/sign-up", function (req, res){
 });
 
 app.post("/post-comment", function(req, res){
-	const entry = new Comment({
+	const new_comment = new Comment({
 	  username: req.body.username,
 	  message: req.body.comment,
 	  date: req.body.date
 	});
 
-  Comment.insertMany(entry, function(err){
+  Comment.insertMany(new_comment, function(err){
           if(err)
           {
             console.log(err);
           }
           else
           {
-            console.log("suceessfully added item to dB");
+            console.log("suceessfully added comment to dB");
           }
         });
 });
