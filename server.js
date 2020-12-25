@@ -56,9 +56,11 @@ app.get("/comment", function(req, res)
 			dates.push(message_db.dates);
 			usernames.push(message_db.usernames);
 		});
+		
+		res.render('comment_page', {username: username, messages: messages, dates: dates, usernames: usernames});
 	  }
 	  
-	  res.render('comment_page', {username: username, messages: messages, dates: dates, usernames: usernames});
+	  //res.render('comment_page', {username: username, messages: messages, dates: dates, usernames: usernames});
 	  
 	});
     

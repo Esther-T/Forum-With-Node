@@ -4,7 +4,7 @@
       <h1> Comments Page</h1>
 	  <h2>Hello <%=username %></h2>
 	  <% for(var i=0; i < messages.Length; i++){ %>
-			<span><%=dates[i] %> <%=usernames[i] %> <%=messages[i] %></span>
+			<%=dates[i] %> <%=usernames[i] %> <%=messages[i] %>
 	  <% } %>
 	  <form class="form-close" action="/post-comment" method="post" style="margin-top:30px">
         <input type="text" name="comment">
