@@ -38,8 +38,26 @@ app.get("/", (req, res) => {
 app.get("/comment", function(req, res)
 {
 	const username = req.query.username_login;
+	var messages = [];
 	console.log(username);
-    res.render('comment_page', {username: username});
+	Comment.find(function(err, message){
+	  if(err)
+	  {
+		console.log("You have an error here")
+		console.log(err);
+	  }
+	  else
+	  {
+		message.forEach(function(message_db){
+			console.log(message_db.message);
+			messages.push(message_db.message);
+		});
+	  }
+	  
+	  res.render('comment_page', {username: username, messages: messages});
+	  
+	});
+    
 });
 
 app.post("/log-in", function (req, res){
