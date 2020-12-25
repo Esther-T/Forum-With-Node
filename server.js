@@ -151,7 +151,10 @@ app.post("/post-comment", function(req, res){
           {
             console.log("suceessfully added comment to dB");
           }
+		  
+		  res.redirect("/comment?username_login=" + req.body.username);
         });
+		
 });
 
 app.listen(port, () => {
