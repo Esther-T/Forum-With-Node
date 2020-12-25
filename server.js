@@ -39,6 +39,8 @@ app.get("/comment", function(req, res)
 {
 	const username = req.query.username_login;
 	var messages = [];
+	var dates = [];
+	var usernames = [];
 	console.log(username);
 	Comment.find(function(err, message){
 	  if(err)
@@ -51,10 +53,12 @@ app.get("/comment", function(req, res)
 		message.forEach(function(message_db){
 			console.log(message_db.message);
 			messages.push(message_db.message);
+			dates.push(message_db.dates);
+			usernames.push(message_db.usernames);
 		});
 	  }
 	  
-	  res.render('comment_page', {username: username, messages: messages});
+	  res.render('comment_page', {username: username, messages: messages, dates: dates, usernames: usernames});
 	  
 	});
     
