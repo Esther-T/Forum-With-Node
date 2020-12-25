@@ -51,7 +51,7 @@ app.get("/comment", function(req, res)
 	  else
 	  {
 		message.forEach(function(message_db){
-			console.log(message_db.message);
+			console.log(message_db.dates);
 			messages.push(message_db.message);
 			dates.push(message_db.dates);
 			usernames.push(message_db.usernames);
