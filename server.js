@@ -51,10 +51,10 @@ app.get("/comment", function(req, res)
 	  else
 	  {
 		message.forEach(function(message_db){
-			console.log(message_db.dates);
+			console.log(message_db.date);
 			messages.push(message_db.message);
-			dates.push(message_db.dates);
-			usernames.push(message_db.usernames);
+			dates.push(message_db.date);
+			usernames.push(message_db.username);
 		});
 		
 		res.render('comment_page', {username: username, messages: messages, dates: dates, usernames: usernames});
