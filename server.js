@@ -112,7 +112,11 @@ app.post("/sign-up", function (req, res){
   console.log(lastname_login);
   console.log(username_login);
   console.log(password_login);
-  //console.log(confirmPassword);
+  console.log(confirmPassword);
+  
+  if(password_login !== confirmPassword)
+  {
+  }
   
   const entry = new Password({
 	  firstName: firstname_login,
