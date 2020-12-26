@@ -116,6 +116,7 @@ app.post("/sign-up", function (req, res){
   
   if(password_login !== confirmPassword)
   {
+	  	res.redirect("/?status=No");
   }
   
   const entry = new Password({
