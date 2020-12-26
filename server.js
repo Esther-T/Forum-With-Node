@@ -59,9 +59,7 @@ app.get("/comment", function(req, res)
 		
 		res.render('comment_page', {username: username, messages: messages, dates: dates, usernames: usernames});
 	  }
-	  
-	  //res.render('comment_page', {username: username, messages: messages, dates: dates, usernames: usernames});
-	  
+	  	  
 	});
     
 });
