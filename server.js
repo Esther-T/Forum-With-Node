@@ -116,7 +116,7 @@ app.post("/sign-up", function (req, res){
   
   if(password_login !== confirmPassword)
   {
-	  	res.render('login', {same_pass : "no"});
+	  	res.render('signup', {same_pass : "no"});
   }
   
   const entry = new Password({
