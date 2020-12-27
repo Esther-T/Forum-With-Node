@@ -32,17 +32,6 @@ const Comment = mongoose.model("Comment", commentSchema);
 
 
 app.get("/", (req, res) => {
-	var same_pass = "yes";
-	try
-	{
-		same_pass = req.query.status;
-	}
-	catch(err)
-	{
-		
-	}
-	
-  //res.sendFile(__dirname + "/login.html"); 
   res.render('login');
 })
 
@@ -91,9 +80,9 @@ app.post("/log-in", function (req, res){
 	  {
 		usernames.forEach(function(username_db){
 			console.log(username_db.username);
-			if(username_login == username_db.username)
+			if(username_login === username_db.username)
 			{
-				if(password_login == username_db.password)
+				if(password_login === username_db.password)
 				{
 					console.log("Access approved");
 					isfound = true;
@@ -127,7 +116,7 @@ app.post("/sign-up", function (req, res){
   
   if(password_login !== confirmPassword)
   {
-	  	res.redirect("/?status=No");
+	  	res.render('login', {same_pass : "no"});
   }
   
   const entry = new Password({
