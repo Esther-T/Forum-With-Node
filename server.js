@@ -32,7 +32,7 @@ const Comment = mongoose.model("Comment", commentSchema);
 
 
 app.get("/", (req, res) => {
-  res.render('login', {same_pass : "yes"});
+  res.sendFile(__dirname + "/login.html");
 })
 
 app.get("/comment", function(req, res)
