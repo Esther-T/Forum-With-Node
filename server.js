@@ -42,7 +42,8 @@ app.get("/", (req, res) => {
 		
 	}
 	
-  res.sendFile(__dirname + "/login.html"); 
+  //res.sendFile(__dirname + "/login.html"); 
+  res.render('login');
 })
 
 app.get("/comment", function(req, res)
