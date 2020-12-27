@@ -42,7 +42,7 @@ app.get("/", (req, res) => {
 		
 	}
 	
-  res.sendFile(__dirname + "/login.html?status=" + same_pass); 
+  res.sendFile(__dirname + "/login.html"); 
 })
 
 app.get("/comment", function(req, res)
