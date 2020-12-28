@@ -102,6 +102,10 @@ app.post("/log-in", function (req, res){
 	
 });
 
+app.post("/check-pass", function (req, res){
+  res.render('check-pass?same_pass=yes');
+});
+
 app.post("/sign-up", function (req, res){
   const firstname_login = req.body.firstname;
   const lastname_login = req.body.lastname;
