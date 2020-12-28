@@ -103,7 +103,7 @@ app.post("/log-in", function (req, res){
 });
 
 app.post("/check-pass", function (req, res){
-  res.render('check-pass?same_pass=yes');
+  res.render('signup', {same_pass : "no"});
 });
 
 app.post("/sign-up", function (req, res){
