@@ -103,7 +103,7 @@ app.post("/log-in", function (req, res){
 });
 
 app.post("/check-pass", function (req, res){
-  res.render('signup', {same_pass : "no"});
+  res.render('signup', {same_pass : "yes"});
 });
 
 app.post("/sign-up", function (req, res){
@@ -121,6 +121,7 @@ app.post("/sign-up", function (req, res){
   if(password_login !== confirmPassword)
   {
 	  	res.render('signup', {same_pass : "no"});
+		return;
   }
   
   const entry = new Password({
