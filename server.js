@@ -139,6 +139,7 @@ app.post("/sign-up", function (req, res){
           else
           {
             console.log("suceessfully added item to dB");
+			res.redirect("/");
           }
         });
 });
