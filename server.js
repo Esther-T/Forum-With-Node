@@ -106,6 +106,10 @@ app.post("/check-pass", function (req, res){
   res.render('signup', {same_pass : "yes"});
 });
 
+app.post("/gotologin", function(req, res){
+	res.redirect('/');
+});
+
 app.post("/sign-up", function (req, res){
   const firstname_login = req.body.firstname;
   const lastname_login = req.body.lastname;
