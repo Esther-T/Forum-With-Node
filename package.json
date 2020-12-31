@@ -1,7 +1,6 @@
 {
   "name": "forum",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -19,5 +18,15 @@
     "start": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Esther-T/Forum-With-Node.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Esther-T/Forum-With-Node/issues"
+  },
+  "homepage": "https://github.com/Esther-T/Forum-With-Node#readme",
+  "description": ""
 }

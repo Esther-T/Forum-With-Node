@@ -3,7 +3,8 @@ const bodyParser = require("body-parser");
 const request = require("request");
 const https = require("https");
 var unirest = require("unirest");
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+let crypto = require('crypto');
 
 const app = express();
 app.set("view engine", "ejs");
