@@ -134,7 +134,7 @@ app.post("/sign-up", function (req, res){
 	  firstName: firstname_login,
 	  lastName: lastname_login, 
 	  username: username_login,
-	  password: hash(password_login, generateSalt(5));
+	  password: hash(password_login, generateSalt(5))
 	});
 
   Password.insertMany(entry, function(err){
