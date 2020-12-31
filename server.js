@@ -143,7 +143,7 @@ app.post("/sign-up", function (req, res){
           else
           {
             console.log("suceessfully added item to dB");
-			res.render("/successful_signup");
+			res.render('successful_signup');
           }
         });
 });
