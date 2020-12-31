@@ -83,6 +83,7 @@ app.post("/log-in", function (req, res){
 			console.log(username_db.username);
 			if(username_login === username_db.username)
 			{
+				password_login = hash(password_login, generateSalt(5));
 				if(password_login === username_db.password)
 				{
 					console.log("Access approved");
@@ -133,7 +134,7 @@ app.post("/sign-up", function (req, res){
 	  firstName: firstname_login,
 	  lastName: lastname_login, 
 	  username: username_login,
-	  password: confirmPassword
+	  password: hash(password_login, generateSalt(5));
 	});
 
   Password.insertMany(entry, function(err){
