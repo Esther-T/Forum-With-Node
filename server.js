@@ -83,7 +83,7 @@ app.post("/log-in", function (req, res){
 			console.log(username_db.username);
 			if(username_login === username_db.username)
 			{
-				password_login = hash(password_login, generateSalt(5));
+				password_login = hash(password_login, 'aoaoao');
 				if(password_login === username_db.password)
 				{
 					console.log("Access approved");
@@ -134,7 +134,7 @@ app.post("/sign-up", function (req, res){
 	  firstName: firstname_login,
 	  lastName: lastname_login, 
 	  username: username_login,
-	  password: hash(password_login, generateSalt(5))
+	  password: hash(password_login, 'aoaoao')
 	});
 
   Password.insertMany(entry, function(err){
@@ -171,20 +171,6 @@ app.post("/post-comment", function(req, res){
         });
 		
 });
-
-//generate the salt for pass
-let generateSalt = rounds => {
-    if (rounds >= 7) {
-        throw new Error(`${rounds} is greater than 15,Must be less that 15`);
-    }
-    if (typeof rounds !== 'number') {
-        throw new Error('rounds param must be a number');
-    }
-    if (rounds == null) {
-        rounds = 5;
-    }
-    return crypto.randomBytes(Math.ceil(rounds / 2)).toString('hex').slice(0, rounds);
-};
 
 //combines hashing and the salt
 let hasher = (password, salt) => {
