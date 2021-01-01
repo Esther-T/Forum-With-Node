@@ -38,7 +38,7 @@ app.get("/", (req, res) => {
 
 app.get("/comment", function(req, res)
 {
-	const username = req.query.username_login;
+	const username = Buffer.from(req.query.username_login, 'base64').toString();
 	var messages = [];
 	var dates = [];
 	var usernames = [];
@@ -58,7 +58,7 @@ app.get("/comment", function(req, res)
 			usernames.push(message_db.username);
 		});
 		
-		res.render('comment_page', {username: Buffer.from(username).toString('base64'), messages: messages, dates: dates, usernames: usernames});
+		res.render('comment_page', {username: username, messages: messages, dates: dates, usernames: usernames});
 	  }
 	  	  
 	});
@@ -88,7 +88,7 @@ app.post("/log-in", function (req, res){
 				{
 					console.log("Access approved");
 					isfound = true;
-					res.redirect("/comment?username_login=" + username_login);
+					res.redirect("/comment?username_login=" + Buffer.from(username_login).toString('base64'));
 				}
 			}
 		});

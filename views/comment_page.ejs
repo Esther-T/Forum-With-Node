@@ -2,7 +2,7 @@
   <body>
     <main role="main" class="container">
       <h1> Comments Page</h1>
-	  <h2>Hello <% Buffer.from(username, 'base64').toString() %></h2>
+	  <h2>Hello <%=username %></h2>
 	  <% for(var i=0; i < messages.length; i++){ %>
 			<%=dates[i] %> | | <%=usernames[i] %> | | <%=messages[i] %><br>
 	  <% } %>
