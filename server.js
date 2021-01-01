@@ -58,7 +58,7 @@ app.get("/comment", function(req, res)
 			usernames.push(message_db.username);
 		});
 		
-		res.render('comment_page', {username: username, messages: messages, dates: dates, usernames: usernames});
+		res.render('comment_page', {username: btoa(username), messages: messages, dates: dates, usernames: usernames});
 	  }
 	  	  
 	});
