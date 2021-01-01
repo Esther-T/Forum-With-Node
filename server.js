@@ -174,7 +174,7 @@ app.post("/post-comment", function(req, res){
 
 //generate the salt for pass
 let generateSalt = rounds => {
-    if (rounds >= 5) {
+    if (rounds >= 7) {
         throw new Error(`${rounds} is greater than 15,Must be less that 15`);
     }
     if (typeof rounds !== 'number') {
