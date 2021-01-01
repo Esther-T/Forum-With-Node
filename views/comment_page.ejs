@@ -7,7 +7,7 @@
 			<%=dates[i] %> | | <%=usernames[i] %> | | <%=messages[i] %><br>
 	  <% } %>
 	  <form class="form-close" action="/post-comment" method="post" style="margin-top:30px">
-        <input type="text" name="comment">
+        <input type="text" name="comment" required>
 		<input type="hidden" name="username" value=<%=username %>>
 		<input type="hidden" id="date" name="date" value="">
 		<script>
