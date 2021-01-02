@@ -180,6 +180,7 @@ let hasher = (password, salt) => {
     return value;
 };
 
+//hash the password
 let hash = (password, salt) => {
     if (password == null || salt == null) {
         throw new Error('Must Provide Password and salt values');
