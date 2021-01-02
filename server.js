@@ -65,6 +65,10 @@ app.get("/comment", function(req, res)
     
 });
 
+app.port("/forgot-pass", function(req, res){
+	//find password
+});
+
 app.post("/log-in", function (req, res){
   var username_login = req.body.username;
   var password_login = req.body.password;
